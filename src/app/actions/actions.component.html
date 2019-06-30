@@ -1,0 +1,18 @@
+<div class="actions">
+    <div class="actions__container">
+        <form id="new-todo" autocomplete="off">
+          <input
+            type="text"
+            class="input"
+            placeholder="Put your next todo here"
+            name="text"
+            [(ngModel)]="newTodo"
+          />
+          <button class="button" (click)="createTodo()">Add next todo</button>
+        </form>
+        <div class="button-container">
+          <button class="button" id="remove-last" (click)="deleteTodo()">Remove last todo</button>
+          <button class="button" id="clear-all" (click)="clearList()">Clear all todos</button>
+        </div>
+    </div>
+</div>

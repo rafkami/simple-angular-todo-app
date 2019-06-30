@@ -1,0 +1,21 @@
+    <div class="list-container">
+      <div id="todos">
+      <ng-container *ngIf="todoList.length > 0; else emptyMessage">
+        <ng-container *ngIf="todoList.length > 1; else oneTodo">
+          <h2 class="list-title">You have {{todoList.length}} todos left:</h2>
+        </ng-container>
+        <ng-template #oneTodo>
+          <h2 class="list-title">You have {{todoList.length}} todo left:</h2>
+        </ng-template>
+        <div class="list-item" *ngFor="let todo of todoList; let i=index">
+          <div class="list-item__container">
+            <span class="list-item__number">Task no. {{i+1}}:</span>
+            <span class="list-item__content">{{todo}}</span>
+          </div>
+        </div> 
+      </ng-container>
+      <ng-template #emptyMessage>
+      <h2 class="empty-message">No to-dos to show</h2>
+      </ng-template>
+      </div>
+    </div>
